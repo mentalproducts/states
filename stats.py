@@ -51,8 +51,14 @@ def data_split(x):
 data_values = data.values()   
 data_join = ''.join(data_values)
 data1_join = deepcopy(data_join)
+data_join_words = data1_join.split(' ') 
+data1 = deepcopy(data)
+data_words = data_split(data1)
+
 
 count_allfiles(data_join) #statistics of characters of all files
-
+count_allfiles(data_join_words) #statistics of words of all files 
 count_for_each_file(data) #statistics of characters of each file
+count_for_each_file(data_words) #statistics of words of each file
 
+write_file_o.close()
