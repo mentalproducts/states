@@ -6,6 +6,7 @@ script, path, write_file = argv
 from os import listdir
 from os.path import isfile
 from os.path import join
+from copy import deepcopy
 
 data = {}
 
@@ -46,3 +47,12 @@ def data_split(x):
         x[key] = x[key].split(' ')
     return x 
     
+    
+data_values = data.values()   
+data_join = ''.join(data_values)
+data1_join = deepcopy(data_join)
+
+count_allfiles(data_join) #statistics of characters of all files
+
+count_for_each_file(data) #statistics of characters of each file
+
