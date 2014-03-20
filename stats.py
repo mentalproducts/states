@@ -19,11 +19,11 @@ for dir_entry in listdir(path):
     if isfile(dir_entry_path):
         with open(dir_entry_path, 'r') as my_file:
             data[dir_entry] = my_file.read()
-            
-            
+
+
 def count_allfiles(i):
     count = {}
-    
+
     for x in i:
         if x in count:
             count[x] += 1
@@ -34,31 +34,31 @@ def count_allfiles(i):
         if count[key] > 0:
             write_file_o.write(key + ':')
             write_file_o.write(str(count[key]) + '\n')
-            
-            
+
+
 def count_for_each_file(r):
     for each in r:
         write_file_o.write("Statistics in " + str(each))
         count_allfiles(r[each])
-        
-        
+
+
 def data_split(x):
     for key in x:
         x[key] = x[key].split(' ')
-    return x 
-    
-    
-data_values = data.values()   
+    return x
+
+
+data_values = data.values()
 data_join = ''.join(data_values)
 data1_join = deepcopy(data_join)
-data_join_words = data1_join.split(' ') 
+data_join_words = data1_join.split(' ')
 data1 = deepcopy(data)
 data_words = data_split(data1)
 
 
-count_allfiles(data_join) #statistics of characters of all files
-count_allfiles(data_join_words) #statistics of words of all files 
-count_for_each_file(data) #statistics of characters of each file
-count_for_each_file(data_words) #statistics of words of each file
+count_allfiles(data_join)  # Statistics of characters of all files
+count_allfiles(data_join_words)  # Statistics of words of all files
+count_for_each_file(data)  # Statistics of characters of each file
+count_for_each_file(data_words)  # Statistics of words of each file
 
 write_file_o.close()
