@@ -39,3 +39,10 @@ def count_for_each_file(r):
     for each in r:
         write_file_o.write("Statistics in " + str(each))
         count_allfiles(r[each])
+        
+        
+def data_split(x):
+    for key in x:
+        x[key] = x[key].split(' ')
+    return x 
+    
