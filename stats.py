@@ -33,3 +33,9 @@ def count_allfiles(i):
         if count[key] > 0:
             write_file_o.write(key + ':')
             write_file_o.write(str(count[key]) + '\n')
+            
+            
+def count_for_each_file(r):
+    for each in r:
+        write_file_o.write("Statistics in " + str(each))
+        count_allfiles(r[each])
