@@ -44,14 +44,14 @@ def count_for_each_file(r):
 
 def data_split(x):
     for key in x:
-        x[key] = x[key].split(' ')
+        x[key] = x[key].split()
     return x
 
 
 data_values = data.values()
 data_join = ''.join(data_values)
 data1_join = deepcopy(data_join)
-data_join_words = data1_join.split(' ')
+data_join_words = data1_join.split()
 data1 = deepcopy(data)
 data_words = data_split(data1)
 
